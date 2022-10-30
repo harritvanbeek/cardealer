@@ -1,0 +1,59 @@
+<div class="PageHeader-pageHeader">
+    <div class="PageHeaderLeft-pageHeaderLeft">
+        Export Car
+    </div>
+
+    <div class="PageHeaderLeft-pageHeaderRight">
+
+        <div class="quicksearch_inputcontainer">
+            <div class="quicksearchinput_container">
+                    <label for="search" class="quicksearchinput_icon">Search</label>
+                    <input id="search" class="quicksearchinput_searchinput" ng-model="search" type="text" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
+    <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
+        <div style="margin-bottom: 20px">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card dark_card">
+                        <div class="card-body">
+                            <h5>index.html / cardealer</h5>
+                                <div ng-repeat="car in cars | filter:'premium'" style="padding: 0px; margin: 0px;">
+                                    <span>&#60option value="{{car.vehiclename}}"&#62;{{car.vehicledisplayname}}&#60/option&#62;</span>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card dark_card">
+                        <div class="card-body">
+                            <h5>Sheard.lua</h5>
+<pre class="text-white">
+    <div ng-repeat="car in cars" style="padding: 0px; margin: 0px;">
+        ["{{car.vehiclename}}"] = {
+            ["name"] = "{{car.vehicledisplayname}}",
+            ["brand"] = "{{car.vehiclebrand}}",
+            ["model"] = "{{car.vehiclename}}",
+            ["price"] = {{car.price}},
+            ["category"] = "{{car.vehicleclass}}",
+            ["hash"] = GetHashKey("{{car.vehiclename}}"),
+            ["image"] = "{{car.assets}}",
+            ["trunkspace"] = 100000,
+            ["trunkslots"] = 80,
+            ["shop"] = "{{car.type}}",
+        },
+    </div>
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

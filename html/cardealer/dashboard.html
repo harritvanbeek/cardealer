@@ -1,0 +1,67 @@
+<div class="PageHeader-pageHeader">
+    <div class="PageHeaderLeft-pageHeaderLeft">
+        Dashboard
+    </div>
+
+    <div class="PageHeaderLeft-pageHeaderRight">
+
+        <div class="quicksearch_inputcontainer">
+            <div class="quicksearchinput_container">
+                    <label for="search" class="quicksearchinput_icon">Search</label>
+                    <input id="search" class="quicksearchinput_searchinput" ng-model="search" type="text" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
+    <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
+        <div style="margin-bottom: 20px">
+            <!-- <style>
+              optgroup, option {
+                background-color: #2d2d2d !important;
+              }
+            </style>
+
+            <div class="boann_input">
+                <select class="browser-default custom-select input_boann" ng-change="filter(filter)" ng-model="filter">
+                    <optgroup label="dealers">
+                        <option value="test1">gta5</option>
+                        <option value="test2">gta5</option>
+                    </optgroup>
+                </select>
+            </div> -->
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Naam</th>
+                        <th>Merk</th>
+                        <th>Catogory</th>
+                        <th>Stock</th>
+                        <th>Prijs</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="car in cars | filter:search">
+                        <td class="white-text" ng-bind-html="car.vehicledisplayname"></td>
+                        <td class="white-text" ng-bind-html="car.vehiclebrand"></td>
+                        <td class="white-text" ng-bind-html="car.vehicleclass"></td>
+                        <td class="white-text" ng-bind-html="car.stock"></td>
+                        <td class="white-text" ng-bind-html="car.price"></td>
+                        <td class="white-text">
+                            <button ui-sref="updateCar({name:car.vehiclename})" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i></button>
+                            <button ng-click="remove(car)" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

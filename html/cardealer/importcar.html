@@ -1,0 +1,85 @@
+<div class="PageHeader-pageHeader">
+    <div class="PageHeaderLeft-pageHeaderLeft">
+        Import Car
+    </div>
+
+    <div class="PageHeaderLeft-pageHeaderRight">
+
+        <div class="quicksearch_inputcontainer">
+            <div class="quicksearchinput_container">
+                    <label for="search" class="quicksearchinput_icon">Search</label>
+                    <input id="search" class="quicksearchinput_searchinput" ng-model="search" type="text" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
+    <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
+        <div style="margin-bottom: 20px">
+            <style>
+                optgroup, option {
+                  background-color: #2d2d2d !important;
+                }
+              </style>
+            <div class="col-md-7">
+                <div class="card dark_card">
+                    <div class="card-body">
+
+                        <div class="boann_input">
+                            <label>Spawn Naam</label>
+                            <input  class="form-control input_boann" ng-model="form.vehiclename">
+                        </div>
+
+                        <div class="boann_input">
+                            <label>Display Naam</label>
+                            <input  class="form-control input_boann" ng-model="form.vehicledisplayname">
+                        </div>
+
+                        <div class="boann_input">
+                            <label>Merk</label>
+                            <input  class="form-control input_boann" ng-model="form.vehiclebrand">
+                        </div>
+
+
+                        <div class="boann_input">
+                            <label>Catogory</label>
+                            <select class="browser-default custom-select input_boann" ng-model="form.vehicleclass">
+                                <option ng-repeat="catogory in catogorys" value="{{catogory.name}}" ng-bind-html="catogory.label"></option>
+                            </select>
+                        </div>
+
+                       <div class="boann_input">
+                            <label>Voorraad</label>
+                            <input  class="form-control input_boann" ng-model="form.stock">
+                        </div>
+
+                        <div class="boann_input">
+                            <label>Prijs</label>
+                            <input  class="form-control input_boann" ng-model="form.price">
+                        </div>
+
+                        <div class="boann_input">
+                            <label>Afbeelding URL</label>
+                            <input  class="form-control input_boann" ng-model="form.assets">
+                        </div>
+
+                        <div class="boann_input">
+                            <label>Dealer</label>
+                            <select class="browser-default custom-select input_boann" ng-model="form.type">
+                                <option ng-repeat="dealer in dealers" value="{{dealer.name}}" ng-bind-html="dealer.label"></option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-sm btn-indigo" ng-click="submit(form)">Opslaan</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
