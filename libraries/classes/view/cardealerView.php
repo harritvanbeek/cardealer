@@ -13,6 +13,25 @@ class cardealerView{
         $this->_SESSION     = NEW \classes\core\session;
     }
 
+    public function getVehicles($data){
+
+        $this->array = ["vehiclebrand" => "{$data}"];
+        $this->query = "SELECT *
+                            FROM `server-cars`
+                            WHERE `vehiclebrand` = :vehiclebrand
+                        ";
+        return $this->_DB->getAll($this->query, $this->array);
+    }
+
+    public function getVehicleBrand(){
+        $this->query = "SELECT `vehiclebrand`
+                            FROM `server-cars`
+                            WHERE `type` = 'premium'
+                            GROUP BY `vehiclebrand`
+                        ";
+        return $this->_DB->getAll($this->query);
+    }
+
     public function updateCar($data){
         $this->query =  "UPDATE `server-cars`
                             SET

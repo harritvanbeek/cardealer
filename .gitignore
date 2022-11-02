@@ -2,3 +2,4 @@ node_modules/
 .vscode/
 dev/
 gulpfile.js
+devConfig.php

@@ -13,6 +13,24 @@
 
 
     switch($action){
+        case "getVehicleBrand" :
+
+            $data = $cardealer->getVehicleBrand();
+            foreach($data as $item){
+                $dataArray[] = [
+                    "vehiclebrand" => "{$item->vehiclebrand}",
+                    /* "vehicledata" => [
+                        "vehiclename"   =>  "{$vehicle->vehiclename}"
+                    ], */
+                ];
+                //$vehicles = $cardealer->getVehicles($item->vehiclebrand);
+                /* foreach($vehicles as $vehicle){
+                } */
+
+            };
+            echo json_encode($dataArray);
+        break;
+
         case "removecar" :
             $carid  =   !empty($input->get("data")["id"]) ? $input->get("data")["id"]   : null;
             if($carid){
