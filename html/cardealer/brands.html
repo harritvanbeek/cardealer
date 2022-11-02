@@ -21,7 +21,6 @@
             <div class="col-md-6 mx-auto">
                 <div class="card dark_card">
                     <div class="card-body">
-                        <button ui-sref="" class="btn btn-sm btn-indigo float-right"><i class="far fa-edit"></i> Add</button>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -32,12 +31,22 @@
                             </thead>
 
                             <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="boann_input">
+                                            <input class="form-control input_boann" ng-model="form.brands">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button ng-if="update == false" ng-click="addDealer(dealer)" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i> Add</button>
+                                        <button ng-if="update == true"  ng-click="updateDealer(dealer)" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i> Update</button>
+                                    </td>
+                                </tr>
                                 <tr ng-repeat="dealer in dealers">
                                     <td class="text-white" ng-bind-html="dealer.name"></td>
                                     <td class="text-white" ng-bind-html="dealer.label"></td>
                                     <td>
-                                        <button ui-sref="updateCar({name:dealer.name})" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i></button>
-                                        <!-- chek dealer is empty -->
+                                        <button  ng-click="edit(dealer)" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i></button>
                                         <button ng-click="remove(dealer)" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
