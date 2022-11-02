@@ -49,6 +49,25 @@
             }
         break;
 
+        case "exportBrands" :
+            echo json_encode($cardealer->exportBrands());
+        break;
+
+        case "getExportCars" :
+            if($input->exist()){
+                $uuid = !empty($input->get("data")) ? $input->get("data") : null;
+                $data = $cardealer->getExportCars($uuid);
+                foreach($data as $item){
+                    $dataArray[] = [
+                        "vehiclename"           =>  "{$item->vehiclename}",
+                        "vehicledisplayname"    =>  "{$item->vehicledisplayname}",
+                    ];
+                }
+
+                echo json_encode( $dataArray );
+            }
+        break;
+
         case "getAllCars" :
             $cars = $cardealer->getAllcars();
             if($cars){
@@ -57,7 +76,7 @@
                         "id"                    =>  "{$car->id}",
                         "vehiclename"           =>  "{$car->vehiclename}",
                         "vehicledisplayname"    =>  "{$car->vehicledisplayname}",
-                        "vehiclebrand"          =>  "{$car->vehiclebrand}",
+                        "vehiclebrand"          =>  !empty($car->label) ? "{$car->label}" :  "{$car->vehiclebrand}",
                         "vehicleclass"          =>  "{$car->vehicleclass}",
                         "stock"                 =>  "{$car->stock}",
                         "assets"                =>  "{$car->assets}",

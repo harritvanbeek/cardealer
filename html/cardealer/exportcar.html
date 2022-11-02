@@ -19,14 +19,32 @@
 <div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
     <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
         <div style="margin-bottom: 20px">
+            <style>
+                optgroup, option {
+                  background-color: #2d2d2d !important;
+                }
+            </style>
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="card dark_card">
                         <div class="card-body">
                             <h5>index.html / cardealer</h5>
-                                <div ng-repeat="car in cars | filter:'premium'" style="padding: 0px; margin: 0px;">
-                                    <span>&#60option value="{{car.vehiclename}}"&#62;{{car.vehicledisplayname}}&#60/option&#62;</span>
-                                </div>
+                            <div class="boann_input">
+                                <select class="browser-default custom-select input_boann" ng-model="form.vehicleclass">
+                                    <option ng-repeat="brand in brands" value="{{brand.uuid}}|{{brand.label}}" ng-bind-html="brand.label"></option>
+                                </select>
+                                <button class="btn btn-sm btn-indigo" ng-click="submit(form)">List</button>
+                            </div>
+                            <hr>
+
+                            <div ng-if="brandlist">
+                                &#60optgroup label="{{brandlist}}"&#62;
+                                    <div ng-repeat="car in exportlist" style="padding: 0px; margin: 0px;">
+                                        <span>&#60option value="{{car.vehiclename}}"&#62;{{car.vehicledisplayname}}&#60/option&#62;</span>
+                                    </div>
+                                &#60/optgroup&#62;
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -34,7 +52,14 @@
                     <div class="card dark_card">
                         <div class="card-body">
                             <h5>Sheard.lua</h5>
+                            <div class="boann_input">
+                                <select class="browser-default custom-select input_boann" ng-model="list.vehicleclass">
+                                    <option ng-repeat="brand in brands" value="{{brand.uuid}}|{{brand.label}}" ng-bind-html="brand.label"></option>
+                                </select>
+                                <button class="btn btn-sm btn-indigo" ng-click="get(list)">List</button>
+                            </div>
 <pre class="text-white">
+
     <div ng-repeat="car in cars" style="padding: 0px; margin: 0px;">
         ["{{car.vehiclename}}"] = {
             ["name"] = "{{car.vehicledisplayname}}",

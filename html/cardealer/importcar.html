@@ -40,7 +40,9 @@
 
                         <div class="boann_input">
                             <label>Merk</label>
-                            <input  class="form-control input_boann" ng-model="form.vehiclebrand">
+                            <select class="browser-default custom-select input_boann" ng-model="form.vehiclebrand">
+                                <option ng-repeat="brand in brands" value="{{brand.uuid}}" ng-bind-html="brand.label"></option>
+                            </select>
                         </div>
 
 

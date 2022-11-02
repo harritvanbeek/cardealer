@@ -38,16 +38,16 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <button ng-if="update == false" ng-click="addDealer(dealer)" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i> Add</button>
-                                        <button ng-if="update == true"  ng-click="updateDealer(dealer)" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i> Update</button>
+                                        <button ng-if="update == false" ng-click="addBrand(form)" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i> Add</button>
+                                        <button ng-if="update == true"  ng-click="updateBrand(form)" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i> Update</button>
                                     </td>
                                 </tr>
-                                <tr ng-repeat="dealer in dealers">
-                                    <td class="text-white" ng-bind-html="dealer.name"></td>
-                                    <td class="text-white" ng-bind-html="dealer.label"></td>
+                                <tr ng-repeat="brand in brands">
+                                    <td class="text-white" ng-bind-html="brand.name"></td>
+                                    <td class="text-white" ng-bind-html="brand.label"></td>
                                     <td>
-                                        <button  ng-click="edit(dealer)" class="btn btn-sm btn-indigo"><i class="far fa-edit"></i></button>
-                                        <button ng-click="remove(dealer)" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                                        <button ng-click="edit(brand)"   class="btn btn-sm btn-indigo"><i class="far fa-edit"></i></button>
+                                        <button ng-click="remove(brand)" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                             </tbody>

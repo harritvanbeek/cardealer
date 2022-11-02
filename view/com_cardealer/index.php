@@ -10,6 +10,7 @@
     $setting    =   NEW \classes\core\settings;
     $_config    =   NEW \classes\core\config;
     $cardealer  =   NEW \classes\view\cardealerView;
+    $brands     =   NEW \classes\view\brandsView;
 
     switch($action){
         case "getThisCar" :
@@ -147,6 +148,10 @@
                     }
                 }
             }
+        break;
+
+        case "getVehicleBrand" :
+            echo json_encode($brands->getBrands());
         break;
 
         case "catogory" :

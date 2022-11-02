@@ -76,8 +76,22 @@ class cardealerView{
         return $this->_DB->getAll($this->query);
     }
 
+    public function getExportCars($data = ''){
+        $this->query = "SELECT * FROM `server-cars` WHERE `vehiclebrand`= '{$data}' ";
+        return $this->_DB->getAll($this->query);
+    }
+
+    public function exportBrands(){
+        $this->query    = "SELECT * FROM `vehicle_brands`";
+        return $this->data     = $this->_DB->getAll($this->query);
+    }
+
     public function getAllcars(){
-        $this->query = "SELECT * FROM `server-cars` ";
+        $this->query = "SELECT *
+                            FROM `server-cars`
+                                LEFT JOIN `vehicle_brands`
+                                ON `server-cars`.`vehiclebrand` = `vehicle_brands`.`uuid`
+                        ";
         return $this->_DB->getAll($this->query);
     }
 
