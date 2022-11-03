@@ -23,6 +23,24 @@ class cardealerView{
         return $this->_DB->getAll($this->query, $this->array);
     }
 
+    public function getFilterCars($data = ''){
+        $this->query = "SELECT *
+                        FROM `server-cars`
+
+                        LEFT JOIN `vehicle_brands`
+                                ON `server-cars`.`vehiclebrand` = `vehicle_brands`.`uuid`
+
+                        WHERE `server-cars`.`type` = '{$data}'
+                            OR `server-cars`.`vehiclebrand` = '{$data}'
+                    ";
+        return $this->_DB->getAll($this->query);
+    }
+
+    public function getShops(){
+        $this->query = "SELECT * FROM `vehicles_dealerships`";
+        return $this->_DB->getAll($this->query);
+    }
+
     public function getVehicleBrand(){
         $this->query = "SELECT `vehiclebrand`
                             FROM `server-cars`

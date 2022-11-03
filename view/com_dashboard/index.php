@@ -13,24 +13,6 @@
 
 
     switch($action){
-        case "getVehicleBrand" :
-
-            $data = $cardealer->getVehicleBrand();
-            foreach($data as $item){
-                $dataArray[] = [
-                    "vehiclebrand" => "{$item->vehiclebrand}",
-                    /* "vehicledata" => [
-                        "vehiclename"   =>  "{$vehicle->vehiclename}"
-                    ], */
-                ];
-                //$vehicles = $cardealer->getVehicles($item->vehiclebrand);
-                /* foreach($vehicles as $vehicle){
-                } */
-
-            };
-            echo json_encode($dataArray);
-        break;
-
         case "removecar" :
             $carid  =   !empty($input->get("data")["id"]) ? $input->get("data")["id"]   : null;
             if($carid){
@@ -47,6 +29,40 @@
                 };
                     echo json_encode($dataArray);
             }
+        break;
+
+        case "getFilterCars" :
+            if($input->exist()){
+                $shop           = !empty($input->get("data")["shop"]) ? $input->get("data")["shop"] : NULL;
+                $vehicleclass   = !empty($input->get("data")["vehicleclass"]) ? explode("|", $input->get("data")["vehicleclass"])["0"]  : NULL;
+
+               if(!empty($shop)){
+                    $dataList = $cardealer->getFilterCars($shop);
+                }elseif(!empty($vehicleclass)){
+                    $dataList = $cardealer->getFilterCars($vehicleclass);
+                }
+
+                if($dataList){
+                    foreach($dataList as $car){
+                        $dataArray[] = [
+                            "id"                    =>  "{$car->id}",
+                            "vehiclename"           =>  "{$car->vehiclename}",
+                            "vehicledisplayname"    =>  "{$car->vehicledisplayname}",
+                            "vehiclebrand"          =>  !empty($car->label) ? "{$car->label}" :  "{$car->vehiclebrand}",
+                            "vehicleclass"          =>  "{$car->vehicleclass}",
+                            "stock"                 =>  "{$car->stock}",
+                            "assets"                =>  "{$car->assets}",
+                            "price"                 =>  "{$car->price}",
+                            "type"                  =>  "{$car->type}",
+                        ];
+                    }
+                    echo json_encode($dataArray);
+                }
+            }
+        break;
+
+        case "getShops" :
+            echo json_encode($cardealer->getShops());
         break;
 
         case "exportBrands" :
@@ -84,7 +100,6 @@
                         "type"                  =>  "{$car->type}",
                     ];
                 }
-
                 echo json_encode( $dataArray );
             }
         break;
