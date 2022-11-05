@@ -20,6 +20,15 @@ class loginView{
         return $this->return;
     }
 
+    public function updatePassword($data = ''){
+            $this->password =   self::SetPassword($data);
+            $this->user     =   (int) $this->_SESSION->get($this->_CONFIG->get("boann/user"));
+            $this->query    =   "UPDATE `users`
+                                    SET `password` = '{$this->password}'
+                                    WHERE `id` = '{$this->user}'";
+            return $this->_DB->action($this->query);
+    }
+
     public function userData($data){
         $this->array    =   ["username" => "{$data}"];
         $this->query    =   "SELECT `id` FROM `users` WHERE `username` = :username ";

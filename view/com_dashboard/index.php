@@ -10,9 +10,46 @@
     $setting    =   NEW \classes\core\settings;
     $_config    =   NEW \classes\core\config;
     $cardealer  =   NEW \classes\view\cardealerView;
+    $login      =   NEW \classes\view\loginView;
 
 
     switch($action){
+        case "updatePassword" :
+            if($input->exist()){
+                $password           =   !empty($input->get("data")["password"])         ? escape($input->get("data")["password"])           : null;
+                $password_again     =   !empty($input->get("data")["password_again"])   ? escape($input->get("data")["password_again"])     : null;
+
+                if(empty($password))                    {$error = ["Nieuw wachtwoord is een verplichte veld"];}
+                elseif(empty($password_again))          {$error = ["Herhaal nieuw wachtwoord is een verplichte veld"];}
+                elseif($password !== $password_again)   {$error = ["Wachtwoorden zijn niet gelijk aan elkaar"];}
+
+                if($input->exist() > 0 and empty($error) === true){
+                    //update password
+                    if($login->updatePassword($password) > 0){
+                        $dataArray= [
+                            "data"          => "success",
+                            "dataContent"   => "Je wachtwoord is bijgewerkt",
+                        ];
+                    }else{
+                        $dataArray= [
+                            "data"          => "error",
+                            "dataContent"   => "er is een fout opgetreden probeer het later opnieuw",
+                        ];
+                    };
+                    echo json_encode($dataArray);
+                }else{
+                    //errors
+                    if(!empty($error)){
+                        $dataArray  =   [
+                            "data"      =>  "error",
+                            "dataContent" =>  $error["0"],
+                        ];
+                        echo json_encode($dataArray);
+                    }
+                };
+            }
+        break;
+
         case "removecar" :
             $carid  =   !empty($input->get("data")["id"]) ? $input->get("data")["id"]   : null;
             if($carid){
