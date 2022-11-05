@@ -1,0 +1,39 @@
+<div class="PageHeader-pageHeader">
+    <div class="PageHeaderLeft-pageHeaderLeft">
+        My Account
+    </div>
+
+    <div class="PageHeaderLeft-pageHeaderRight">
+
+        <div class="quicksearch_inputcontainer">
+            <div class="quicksearchinput_container">
+                    <label for="search" class="quicksearchinput_icon">Search</label>
+                    <input id="search" class="quicksearchinput_searchinput" ng-model="search" type="text" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
+    <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
+        <div style="margin-bottom: 20px">
+            <div class="col-md-6 mx-auto">
+                <div class="card dark_card">
+                    <div class="card-body">
+                        <div class="boann_input">
+                            <label>Nieuwe Wachtwoord</label>
+                            <input type="password" class="form-control input_boann" ng-model="form.password">
+                        </div>
+
+                        <div class="boann_input">
+                            <label>Herhaal nieuw Wachtwoord</label>
+                            <input type="password" class="form-control input_boann" ng-model="form.password_again">
+                        </div>
+                        <button ng-click="updatePassword(form)" class="btn btn-sm btn-indigo">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
