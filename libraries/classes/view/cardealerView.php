@@ -37,7 +37,7 @@ class cardealerView{
     }
 
     public function getShops(){
-        $this->query = "SELECT * FROM `vehicles_dealerships`";
+        $this->query = "SELECT * FROM `vehicles_dealerships` ";
         return $this->_DB->getAll($this->query);
     }
 
@@ -45,7 +45,7 @@ class cardealerView{
         $this->query = "SELECT `vehiclebrand`
                             FROM `server-cars`
                             WHERE `type` = 'premium'
-                            GROUP BY `vehiclebrand`
+                            GROUP BY `vehiclebrand`                            
                         ";
         return $this->_DB->getAll($this->query);
     }
@@ -100,7 +100,7 @@ class cardealerView{
     }
 
     public function exportBrands(){
-        $this->query    = "SELECT * FROM `vehicle_brands`";
+        $this->query    = "SELECT * FROM `vehicle_brands` ORDER BY `name`";
         return $this->data     = $this->_DB->getAll($this->query);
     }
 

@@ -7,8 +7,6 @@
     $protocol = isset($_SERVER["HTTPS"]) ? 'https' : 'http';
     $path   =   !empty(explode('/', parse_url($_SERVER["REQUEST_URI"])["path"])[1]) ? explode('/', parse_url($_SERVER["REQUEST_URI"])["path"])[1] : null;
 
-
-
     // Defines.
     define('DS',                  DIRECTORY_SEPARATOR);
     define('BOANN_ROOT',          implode(DS, $parts));

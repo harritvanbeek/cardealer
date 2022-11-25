@@ -14,12 +14,15 @@ class brandsView{
     }
 
     public function updateBrand($data = []){
+        $name = $data["name"];
+        $label = $data["label"];
+        $uuid = $data["uuid"];
         $this->query = "UPDATE `vehicle_brands`
                             SET
-                                `name`  = '{$data["name"]}',
-                                `label` = '{$data["label"]}'
+                                `name`  = '{$name}',
+                                `label` = '{$label}'
 
-                            WHERE `uuid` = '{$data["uuid"]}'
+                            WHERE `uuid` = '{$uuid}'
                         ";
         return $this->_DB->action($this->query);
     }
@@ -29,13 +32,14 @@ class brandsView{
         return $this->_DB->action($this->query, $data);
     }
 
-    public function severCars(){
+    /*public function severCars(){
         $this->query    = "SELECT `uuid` FROM `vehicle_brands` WHERE `name` = 'audi' ";
         $this->uuid     = $this->_DB->get($this->query)->uuid;
         //debug($this->uuid);
 
 
-        $this->query    = "SELECT * FROM `server-cars` WHERE `type` = 'premium' AND `vehiclebrand` = 'Audi' ";
+        $this->query    = "SELECT * FROM `server-cars` 
+                            WHERE `type` = 'premium' AND `vehiclebrand` = 'Audi' ";
         $this->cars     = $this->_DB->getAll($this->query);
 
         foreach($this->cars as $car){
@@ -43,12 +47,13 @@ class brandsView{
             $this->return = $this->_DB->action($this->query);
             debug($this->return ,1 );
         }
-
-
-    }
+    }*/
 
     public function getBrands(){
-        $this->query = "SELECT * FROM `vehicle_brands` ";
+        $this->query = "SELECT *
+                            FROM `vehicle_brands`
+                            ORDER BY `name`
+                        ";
         return $this->_DB->getAll($this->query);
     }
 }
