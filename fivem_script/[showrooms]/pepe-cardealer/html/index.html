@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+    <body>
+        <div class="main-container">
+            <div class="inside-tablet">
+                <div class="side-bar">
+                    <div class="block-logo"><i class="fas fa-car"></i><p>Cardealer</p></div>
+                    <div class="menu-item" data-type="Home"><p>Home</p></div>
+                    <div class="menu-item" data-type="Stock"><p>Voorraad</p></div>
+                    <div class="menu-item" data-type="Sold"><p>Verkocht</p></div>
+                </div>
+                <div class="cardealer-block"></div>
+                <div class="stock-block"></div>
+                <div class="sold-block"></div>
+                <div class="choose-slot-vehicle">
+                    <select class="input-vehicle" name="vehicle-chooser">
+                        <option value="nill">Empty</option>
+                        <optgroup label="Apollo">
+                            <option value="apolloie">apollo IE</option>
+                        </optgroup> 
+                        
+                        <optgroup label="Astonmartin">
+                            <option value="rmodmartin">dbs suppelegera</option>
+                            <option value="ast">vanquish</option>
+                            <option value="avalk">vakyrie</option>
+                            <option value="db11">db11</option>
+                            <option value="oycval">valhalla</option>
+                            <option value="vantage">vantage</option>
+                            <option value="vulcan">vulcan</option>
+                            <option value="db7zagato">db7 zagato</option>
+                        </optgroup>
+
+                        <optgroup label="Alfa Romeo">
+                            <option value="4c">4C</option>
+                            <option value="giulia">Giulia</option>
+                            <option value="tz3">tz3 stradale</option>
+                            <option value="alfa67">33 stradale</option>
+                            <option value="ardv">disco volante</option>
+                            <option value="argiu">Guilietta</option>
+                            <option value="stelvio">Stelvio</option>
+                        </optgroup>
+
+                        <optgroup label="Acura">
+                            <option value="filthynsx">nsx 2016</option>
+                        </optgroup>
+
+                        <optgroup label="Alpine">
+                            <option value="al1">a110</option>
+                        </optgroup>
+
+                        <optgroup label="Audi">
+                            <option value="rs3">rs3</option>
+                            <option value="2015s3">s3</option>
+                            <option value="aaq4">a4 quatro</option>
+                            <option value="r8ppi">r8</option>
+                            <option value="rs7">rs7</option>
+                            <option value="a615">a6</option>
+                            <option value="a7">a7</option>
+                            <option value="a8lfsi">a8 L</option>
+                            <option value="a8lw12">a8 w12</option>
+                            <option value="rs318">rs3 quatro</option>
+                            <option value="rs5">rs5</option>
+                            <option value="s1">s1</option>
+                            <option value="b5s4">a4 b5</option>
+                            <option value="audis8om">s8</option>
+                            <option value="ttrs">TT Roadster</option>
+                        </optgroup>
+
+                        <optgroup label="Bentley">
+                            <option value="rmodbacalar">bacalar</option>
+                            <option value="bbentayga">bentayga</option>
+                            <option value="ben17">continental 2017</option>
+                            <option value="contgt13">continental 2013</option>
+                            <option value="bentaygam">bentayga mansory</option>
+                            <option value="bcgt">continental cabrio</option>
+                            <option value="bexp">xp10 speed6</option>
+                            <option value="bmm">mulsanne</option>
+                        </optgroup> 
+
+                        <optgroup label="BMW">
+                            <option value="m3e46">m3 e46</option>
+                            <option value="g20">g20</option>
+                            <option value="f82">m4 f82</option>
+                            <option value="rmodm5e34">m5 e34</option>
+                            <option value="m6f06">m6</option>
+                            <option value="rmodbmwm8">m8 competition</option>
+                            <option value="m850">m850i</option>
+                            <option value="2020x6">x6 m50i</option>
+                            <option value="x7bmw">x7 40i</option>
+                            <option value="i8">i8</option>
+                            <option value="rmodm4gts">m4 gts</option>
+                            <option value="bmwe65">760i</option>
+                            <option value="m3e30">m3 e30</option>
+                            <option value="m1procar">m1 procar</option>
+                            <option value="m3">m3</option>
+                            <option value="bmwm8">m8</option>
+                            <option value="17m760i">m760i</option>
+                            <option value="alpinae30">E30 alpina</option>
+                            <option value="m2">m2</option>
+                            <option value="m3e92gts">m3 e92 gts</option>
+                            <option value="m346">m3 gtr</option>
+                            <option value="m3f80">m3 f80</option>
+                            <option value="f82lw">m4 f82 liberty walk</option>
+                            <option value="bmci">m5</option>
+                            <option value="m5f90">m5 f90</option>
+                            <option value="m6f13">m6</option>
+                            <option value="x6m">x6 M</option>
+                            <option value="z3">z3</option>
+                        </optgroup>   
+
+                        <optgroup label="Bugatti">
+                            <option value="bdivo">divo</option>
+                            <option value="bug300ss">chiron supersport</option>
+                            <option value="bugatti">veyron</option>
+                            <option value="chiron17">chiro</option>
+                        </optgroup> 
+
+                        <optgroup label="Buick">
+                            <option value="gsxb">gsxb</option>
+                        </optgroup>
+
+                        <optgroup label="Cadillac">
+                            <option value="cats">ats</option>
+                            <option value="xlrv">xlr</option>
+                            <option value="gmt900escalade">escalade</option>
+                        </optgroup>
+                        
+                        <optgroup label="Canam">
+                            <option value="godzcanam">maverick</option>
+                        </optgroup>
+
+                        <optgroup label="Chevrolet">
+                            <option value="c8">c8</option>
+                            <option value="c10">c10</option>
+                            <option value="camaro_ss">camaro ss</option>
+                            <option value="2019zr1">zr1 convertible</option>
+                            <option value="c7">c7</option>
+                            <option value="silverado">silverado</option>
+                            <option value="tahoe">tahoe</option>
+                            <option value="alpha6">camaro</option>
+                            <option value="exor">the exorcist</option>
+                            <option value="zl12017">zl1</option>
+                            <option value="c10custom">c10 custom</option>
+                            <option value="silv86">LSX</option>
+                            <option value="forgieC7">forgiato c7</option>
+                            <option value="impala59c">impala 1959</option>
+                            <option value="k5blazer">k5 blazer</option>
+                            <option value="2019zr1">zr1</option>
+                        </optgroup>
+
+                        <optgroup label="Chrysler">
+                            <option value="300srt8">300 C</option>
+                        </optgroup>
+
+                        <optgroup label="Citroen">
+                            <option value="c2vtr">Citroen c2</option>
+                            <option value="citroenc3">Citroen c3</option>
+                            <option value="ds4">Citroen ds4</option>
+                        </optgroup>
+
+                        <optgroup label="Dodge">
+                            <option value="rmodcharger69">69 charger</option>
+                            <option value="demon">demon</option>
+                            <option value="16charger">16 charger</option>
+                            <option value="2017Charger">2017 Charger</option>
+                            <option value="chargerpolice">popo amirican</option>
+                            <option value="diplomat83">diplomat 83</option>
+                            <option value="16challenger">16 Challenger</option>
+                            <option value="megaram">mega ram</option>
+                            <option value="dl2016">Ram 1500</option>
+                            <option value="99viper">99 viper</option>
+                            <option value="acr">Viper Arc</option>
+                        </optgroup>
+
+                        <optgroup label="Ferrari">
+                            <option value="488">488 Spider</option>
+                            <option value="rmodf12tdf">f12 tdf</option>
+                            <option value="rmodf40">F 40</option>
+                            <option value="j50">J 50</option>
+                            <option value="f288gto">288 gto</option>
+                            <option value="fstradale">challenge stradale</option>
+                            <option value="458speciale">458 speciale</option>
+                            <option value="f812">812</option>
+                            <option value="enzo">enzo</option>
+                            <option value="fxxk">fxx k</option>
+                            <option value="nlargo">n largo</option>
+                            <option value="pista">488 GTB PISTA</option>
+                            <option value="polf430">police amirican</option>
+                            <option value="ferporto">porto</option>
+                            <option value="250testarossa">250 testa rossa</option>
+                        </optgroup>
+
+                        <optgroup label="Fiat">
+                            <option value="Fiat595ss">595 ss</option>
+                        </optgroup>
+
+                        <optgroup label="Ford">
+                            <option value="boss302">Ford Mustang Boss 302</option>
+                            <option value="fordcrownvic">Crown Victoria</option>
+                            <option value="f150">f150 Raptor</option>
+                            <option value="st">Focus ST</option>
+                            <option value="2015polstang">Mustang (police)</option>
+                            <option value="fordhv2">Mustang 1965 RTR Hoonicorn</option>
+                            <option value="fair500">Mustang fair 500</option>
+                            <option value="focusrs">Mustang focus rs</option>
+                            <option value="mustang19">Mustang GT</option>
+                            <option value="keenblock">hunicorn</option>
+                            <option value="mustang65">Mustang 65</option>
+                            <option value="mgt">Mustang GT</option>
+                            <option value="rmodmustang">Mustang GT</option>
+                            <option value="shelbygt350">Mustang GT</option>
+                        </optgroup>
+
+                        <optgroup label="Gmc">
+                            <option value="denalihd">Sierra HD Denali</option>
+                            <option value="gmcyd">Yukon Denali</option>
+                        </optgroup>
+
+                        <optgroup label="Honda">
+                            <option value="civic">Civic</option>
+                            <option value="honci4">Honci 4x4</option>
+                            <option value="hondacivictr">civi type r</option>
+                        </optgroup>
+
+                        <optgroup label="Hummer">
+                            <option value="h6">H6</option>
+                        </optgroup>
+
+                        <optgroup label="Jaguar">
+                            <option value="fpacehm">f pace</option>
+                            <option value="xkgt">XK RS GT</option>
+                        </optgroup>
+
+                        <optgroup label="Jeep">
+                            <option value="rubi3d">Rubicon</option>
+                            <option value="srt8">srt8 trackhawk</option>
+                            <option value="jeep2012">rubicon 2012</option>
+                            <option value="trailcat">trailcat</option>
+                            <option value="trhawk">trackhawk</option>
+                        </optgroup>
+
+                        <optgroup label="Kia">
+                            <option value="sportage16">sportage 1600 gdi</option>
+                        </optgroup>
+
+                        <optgroup label="Koenigsegg">
+                            <option value="acsr">Agera</option>
+                            <option value="regera">Regera</option>
+                            <option value="agerars">Agera rs</option>
+                        </optgroup>
+                                                               
+                    </select>
+                    <div class="subit-button"><p>Bevestig</p></div>
+                    <div class="cancel-button"><p>Annuleren</p></div>
+                </div>
+            </div>
+            <img src="./img/tablet-frame.png" class="tablet-frame">
+        </div>
+    </body>
+    <script src="./js/script.js"></script>
+</html>

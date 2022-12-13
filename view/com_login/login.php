@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BOANN starcitzen login</title>
+    <title>Cardealer</title>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link href="<?php echo THEMES; ?>/css/bootstrap.min.css" rel="stylesheet">
@@ -138,7 +138,6 @@
         <script type="text/javascript" src="<?php echo THEMES; ?>/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo THEMES; ?>/js/mdb.min.js"></script>
         <script type="text/javascript" src="<?php echo THEMES; ?>/js/angular.min.js"></script>
-        <script type="text/javascript" src="<?php echo THEMES; ?>/js/angular-sanitize.min.js"></script>
         <script type="text/javascript" src="<?php echo THEMES; ?>/js/angular-sanitize.min.js"></script>
         <script type="text/javascript" src="<?php echo THEMES; ?>/js/angular-ui-router.js"></script>
 

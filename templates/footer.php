@@ -4,7 +4,6 @@
 
 
 
-
     <?php if(TeamDev()) : ?>
     <script type="text/javascript" id="__bs_script__">//<![CDATA[
     document.write("<script type='text/javascript' async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
