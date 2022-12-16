@@ -4,3 +4,4 @@ dev/
 gulpfile.js
 devConfig.php
 sftp-config.json
+package-lock.json
